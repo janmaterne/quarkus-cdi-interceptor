@@ -14,7 +14,9 @@ public class HelloWorldInterceptor {
 	@AroundInvoke
 	public Object intercept(InvocationContext context) throws Exception {
 		// call the original CDI bean, so the whole chain is executed
-		Object originalValueNotUsedAnyMore = context.proceed();
+		// ... (but it is not required)
+		// Object originalValueNotUsedAnyMore = context.proceed();
+		
 		// but return a complete other value
 		return "intercept";
 	}
