@@ -27,6 +27,8 @@ But the failure leads to improper environment:
                          Install it using `gu install native-image`
 ```
 
+See https://quarkus.io/guides/building-native-image
+
 
 ## CDI-Interceptor
 
