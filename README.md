@@ -1,8 +1,43 @@
 # cdi-interceptor project
 
+The goal of this project is to implement a CDI interceptor running Quarkus with less code as possible.
+
+Steps while experimenting:
+
+  * generate the project via http://code.quarkus.io
+  * delete stuff we don't need for this project goal:
+    * no native compilation, therefore no dockerfiles and no native test support
+    * no website, just the endpoint 
+  * use JEE tutorial to implement a CDI interceptor
+  * try to get rid off some code: 
+     * Quarkus doesn't need a `beans.xml` file
+     * Quarkus configuration file (`application.properties`) is optional
+  * try some 'clean ups' and comment their failure 
+
+Note:
+
+I tried native compilation without success, so I can't provide feedback here. 
+But the failure leads to improper environment:
+
+```
+[ERROR] Failed to execute goal io.quarkus:quarkus-maven-plugin:1.4.2.Final:build (default) on project cdi-interceptor: 
+        Failed to build quarkus application: io.quarkus.builder.BuildException: Build failure: Build failed due to errors
+[ERROR]         [error]: Build step io.quarkus.deployment.pkg.steps.NativeImageBuildStep#build threw an exception: 
+                         java.lang.RuntimeException: Cannot find the `native-image.cmd` in the GRAALVM_HOME, JAVA_HOME and System PATH. 
+                         Install it using `gu install native-image`
+```
+
+
+## CDI-Interceptor
+
+The CDI interceptor is based on https://docs.oracle.com/javaee/6/tutorial/doc/gkhjx.html
+
+## Quarkus
+
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+
 
 ## Running the application in dev mode
 
@@ -29,7 +64,4 @@ You can then execute your native executable with: `./target/cdi-interceptor-1.0.
 
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/building-native-image.
 
-## CDI-Interceptor
-
-The CDI interceptor is based on https://docs.oracle.com/javaee/6/tutorial/doc/gkhjx.html
 
