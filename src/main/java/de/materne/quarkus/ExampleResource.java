@@ -10,6 +10,8 @@ public class ExampleResource {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
+    // Let the interceptor intercept this request
+    @HelloWorld
     public String hello() {
         return "hello";
     }

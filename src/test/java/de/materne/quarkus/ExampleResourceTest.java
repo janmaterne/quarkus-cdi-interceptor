@@ -15,7 +15,8 @@ public class ExampleResourceTest {
           .when().get("/")
           .then()
              .statusCode(200)
-             .body(is("hello"));
+             // expect the value of the interceptor
+             .body(is("intercept"));
     }
 
 }
